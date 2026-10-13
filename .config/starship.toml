@@ -1,0 +1,354 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+format = """
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$direnv\
+$env_var\
+$mise\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery$time\
+$status\
+$os\
+$container\
+$netns\
+$shell\
+$character"""
+# [time]
+# disabled = false
+# format = "🕒 [time](style)"
+# time_format = "%H:%M:%S.%3N" # %3N 代表毫秒
+# disabled = true
+# style = 'bold green'
+# format = '🕙[$time]($style) '
+# time_format = '%T'
+# utc_time_offset = '+8'
+# time_range = '00:00:00-23:59:59'
+# [time]
+# disabled = false
+# use_12hr = false
+# time_format = '%T'
+# format = '⏰[$time](bold green) '
+# utc_time_offset = '+8'
+# time_range = '00:00:00-23:59:59'
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+#success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+[cmd_duration]
+min_time = 1   # 最小触发时间（单位：毫秒，此处为 2 秒）
+format = "🕒[$duration]($style)"  # 自定义显示格式
+style = "bold yellow"  # 自定义颜色
+show_milliseconds = true  # 显示毫秒
+disabled = false  # 禁用此模块
+min_time_to_notify = 45_000
+# 自定义历史命令数量（需配合 Shell 配置）
+# [custom.history]
+# command = "echo $(history | wc -l)"
+# when = true
+# format = "📜 [$output](bold purple) "
+# format = "⏳ [$output](bold purple)"  # 自定义显示格式
+
+
+# 其他模块（如目录、Git 等）
+[directory]
+# truncation_length = 15
+truncate_to_repo = false
+style = "bold green"
+read_only = " 󰌾"
+truncation_length = 0
+format = "[$path]($style) "
+
+[aws]
+symbol = "  "
+format = "[$symbol$version](bold green)"
+[buf]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[c]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[conda]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[crystal]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[dart]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[docker_context]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[elixir]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[elm]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[fennel]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[fossil_branch]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[git_branch]
+symbol = " "
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style)'
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = '🔖 '
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style)'
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[git_status]
+conflicted = '🏳'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[golang]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[guix_shell]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[haskell]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[haxe]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[hg_branch]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[hostname]
+ssh_symbol = " "
+format = "[$symbol$version](bold green)"
+[java]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[julia]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[kotlin]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[lua]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[memory_usage]
+symbol = "󰍛 "
+format = "[$symbol$version](bold green)"
+[meson]
+symbol = "󰔷 "
+format = "[$symbol$version](bold green)"
+[nim]
+symbol = "󰆥 "
+format = "[$symbol$version](bold green)"
+[nix_shell]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[nodejs]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[ocaml]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+disabled = true
+
+[perl]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[php]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[rlang]
+symbol = "󰟔 "
+format = "[$symbol$version](bold green)"
+[ruby]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[rust]
+symbol = "󱘗 "
+format = "[$symbol$version](bold green)"
+[scala]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[swift]
+symbol = " "
+format = "[$symbol$version](bold green)"
+[zig]
+symbol = " "
+format = "[$symbol$version](bold green)"
+# [git_branch]
+# format = " [$symbol$branch]($style) "
+# symbol = "🍣 "
+# style = "bold yellow"
+
+# [git_commit]
+# commit_hash_length = 8
+# style = "bold white"
+
+# [git_state]
+# format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+# [git_status]
+# conflicted = "⚔️ "
+# ahead = "🏎️ 💨 ×${count}"
+# behind = "🐢 ×${count}"
+# diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+# untracked = "🛤️  ×${count}"
+# stashed = "📦 "
+# modified = "📝 ×${count}"
+# staged = "🗃️  ×${count}"
+# renamed = "📛 ×${count}"
+# deleted = "🗑️  ×${count}"
+# style = "bright-white"
+# format = "$all_status$ahead_behind"

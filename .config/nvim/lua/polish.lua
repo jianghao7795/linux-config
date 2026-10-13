@@ -1,0 +1,26 @@
+-- This will run last in the setup process.
+-- This is just pure lua so anything that doesn't
+-- fit in the normal config locations above can go here
+
+-- lua/configs/lsp.lua
+-- local lspconfig = require('lspconfig')
+--
+-- -- Vue 3 配置（Volar）
+-- lspconfig.volar.setup({
+--   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+--   on_attach = function(client, bufnr)
+--     -- 启用 LSP 的按键映射
+--     local opts = { noremap = true, silent = true, buffer = bufnr }
+--
+--     -- 定义 gd 映射
+--     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+--     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+--     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+--     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+--   end,
+--   init_options = {
+--     vue = {
+--       hybridMode = true
+--     }
+--   }
+-- })

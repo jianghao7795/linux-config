@@ -1,0 +1,73 @@
+theme = "gruvbox_dark_hard"
+# icons = "nerd"
+
+# editor 编辑器
+[editor]
+# icons = "nerd"
+# 真彩支持
+true-color = true
+auto-completion = true
+auto-save = false
+auto-info = true
+auto-format = true
+# cursorcolumn = true # 光标列高亮
+cursorline = true # 光标 行高亮
+color-modes = true
+idle-timeout = 40
+# mouse = true
+# scrolloff = 5 # 滚动时上下边缘填充行数
+scroll-lines = 3
+line-number = "absolute"  # 行号类型 absolute / relative 
+# rulers = [80, 120]   # 标尺
+indent-heuristic = "hybrid" # hybrid | tree-sitter | simple
+bufferline = "multiple"  # always | multiple | nerver
+gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+completion-replace = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true # 服务器语言信息提示 
+display-signature-help-docs = true
+display-inlay-hints = true # 默认 false 
+enable = true
+auto-signature-help = true
+goto-reference-include-declaration = true
+snippets = true
+
+[editor.whitespace.render]
+# space = "all"
+# tab = "all"
+# newline = "all"
+
+[editor.whitespace.characters]
+# space = "·"
+# nbsp = "⍽"
+tab = "→"
+# newline = "⏎"
+# tabpad = "·"
+
+[editor.soft-wrap]
+enable = true
+# max-wrap = 20 
+# max-indent-retain = 40
+# wrap-indicator = "↪ "
+
+# 光标样式
+[editor.cursor-shape]
+insert = "block"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+follow-symlinks = false
+

@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1785488841548,
+	"update": {
+		"latest": "4.6.84",
+		"current": "2.13.18",
+		"type": "major",
+		"name": "umi"
+	}
+}

@@ -1,0 +1,65 @@
+# 窗口设置
+[window]
+# 窗口大小
+dimensions = { columns = 80, lines = 24 }
+# 窗口不透明度
+opacity = 0.9
+# 窗口装饰（none 表示无边框）
+decorations = "none"
+
+# 缩放级别
+scaling = { normal = 1.0, hi_dpi = 1.0 }
+
+# 字体设置
+[font]
+# 字体名称
+normal = { family = "BitstromWera Nerd Font", style = "Regular" }
+bold = { family = "BitstromWera Nerd Font", style = "Bold" }
+italic = { family = "BitstromWera Nerd Font", style = "Italic" }
+bold_italic = { family = "BitstromWera Nerd Font", style = "Bold Italic" }
+# 字体大小
+size = 12.0
+# 字符间距
+offset = { x = 0, y = 0 }
+# 行间距
+glyph_offset = { x = 0, y = 0 }
+
+# 颜色方案设置
+[colors]
+# 默认前景色和背景色
+primary = { foreground = "#ffffff", background = "#000000" }
+# 光标颜色
+cursor = { text = "#000000", cursor = "#ffffff" }
+# 选择文本时的颜色
+selection = { text = "#ffffff", background = "#444444" }
+# 正常颜色
+normal = { black = "#000000", red = "#ff0000", green = "#00ff00", yellow = "#ffff00", blue = "#0000ff", magenta = "#ff00ff", cyan = "#00ffff", white = "#ffffff" }
+# 亮色
+bright = { black = "#888888", red = "#ff5555", green = "#55ff55", yellow = "#ffff55", blue = "#5555ff", magenta = "#ff55ff", cyan = "#55ffff", white = "#ffffff" }
+
+# 滚动设置
+[scrolling]
+# 滚动历史行数
+history = 10000
+# 每次滚动行数
+multiplier = 3
+
+# 鼠标设置
+[mouse]
+# 鼠标选中时自动复制到剪贴板
+# selection = { semantic_escape_chars = ",│`|:\"' ()[]{}<>\t" }
+# 鼠标滚轮缩放
+# wheel = { zoom = true }
+
+# 键盘绑定示例
+[keybindings]
+# 复制快捷键
+
+# key = "C"
+# mods = "Control|Shift"
+# action = "Copy"
+#
+# # 粘贴快捷键
+# key = "V"
+# mods = "Control|Shift"
+# action = "Paste"
